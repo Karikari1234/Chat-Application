@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('location', (location, callback) => {
-        socket.broadcast.emit('locationMessage', generateLocationMessage(location))
+        io.emit('locationMessage', generateLocationMessage(location))
         callback('Shared!')
     })
 
